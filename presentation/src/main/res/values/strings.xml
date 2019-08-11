@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">presentation</string>
+    <string name="github_username">GitHub username</string>
+	<string name="get_user_repos">Get user repos</string>
+	<string name="authorize">Authorize</string>
+	<string name="open_issues">Open issues</string>
+	<string name="closed_issues">Closed issues</string>
+	<string name="pull_requests">Pull requests</string>
+</resources>
