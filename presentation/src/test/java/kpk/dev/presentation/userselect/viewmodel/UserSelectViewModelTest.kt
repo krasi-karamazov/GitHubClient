@@ -47,14 +47,14 @@ class UserSelectViewModelTest {
     fun setUp() {
         MockitoAnnotations.initMocks(this)
         viewModel = UserSelectViewModel(userUseCase!!, compositeDisposable!!, TestSchedulerProvider())
-        viewModel.checkUser("", "").observeForever(observer!!)
+        //viewModel.checkUser("", "").observeForever(observer!!)
     }
 
     @Test
     fun `test for null return from usecase`() {
         userUseCase?.getUserRepository = userRepo!!
-        Mockito.`when`(userUseCase?.checkUser("", "")).thenReturn(Single.just(generateMockResponse()))
-        Mockito.`when`(userRepo?.getUser("", "")).thenReturn(Single.just(generateMockResponse()))
+        Mockito.`when`(userUseCase?.checkUser("", "")).thenReturn(null)
+        //Mockito.`when`(userRepo?.getUser("", "")).thenReturn(Single.just(generateMockResponse()))
         Assert.assertNotNull(viewModel.checkUser("", ""))
         Assert.assertTrue(viewModel.checkUser("", "").hasObservers())
     }
