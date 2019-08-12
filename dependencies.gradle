@@ -33,6 +33,7 @@ ext {
     testRunnerVersion = '1.0.2'
     espressoVersion = '3.0.2'
     mockitoVersion = "2.+"
+    androidArchCoreTestingVersion = "1.1.1"
 
     appDependencies=[
             [configuration: "implementation", dependency: "com.google.dagger:dagger:$daggerVersion"],
@@ -76,14 +77,16 @@ ext {
             [configuration: "kapt", dependency: "com.google.dagger:dagger-android-processor:$daggerVersion"],
             [configuration: "kapt", dependency: "com.google.dagger:dagger-compiler:$daggerVersion"],
             [configuration: "implementation", dependency: "com.google.dagger:dagger:$daggerVersion"],
-            [configuration: "implementation", dependency: "androidx.cardview:cardview:$cardViewVersion"],
+            [configuration: "implementation", dependency: "androidx.cardview:cardview:$cardViewVersion"]
+
     ]
 
     presentationTestDependencies=[
             [configuration: "testImplementation", dependency:"junit:junit:$jUnitVersion"],
             [configuration: "androidTestImplementation", dependency:"com.android.support.test:runner:$testRunnerVersion"],
             [configuration: "androidTestImplementation", dependency:"com.android.support.test.espresso:espresso-core:$espressoVersion"],
-            [configuration: "testImplementation", dependency:"org.mockito:mockito-core:$mockitoVersion"]
+            [configuration: "testImplementation", dependency:"org.mockito:mockito-core:$mockitoVersion"],
+            [configuration: "testImplementation", dependency:"android.arch.core:core-testing:$androidArchCoreTestingVersion"]
 
     ]
 
@@ -97,7 +100,9 @@ ext {
     domainTestDependencies=[
             [configuration: "testImplementation", dependency:"junit:junit:$jUnitVersion"],
             [configuration: "androidTestImplementation", dependency:"com.android.support.test:runner:$testRunnerVersion"],
-            [configuration: "androidTestImplementation", dependency:"com.android.support.test.espresso:espresso-core:$espressoVersion"]
+            [configuration: "testImplementation", dependency:"org.mockito:mockito-core:$mockitoVersion"],
+            [configuration: "androidTestImplementation", dependency:"com.android.support.test.espresso:espresso-core:$espressoVersion"],
+            [configuration: "testImplementation", dependency:"android.arch.core:core-testing:$androidArchCoreTestingVersion"]
     ]
 
     modelDependencies=[

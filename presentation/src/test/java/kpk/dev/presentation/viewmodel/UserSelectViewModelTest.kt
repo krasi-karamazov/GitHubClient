@@ -9,13 +9,12 @@ import kpk.dev.model.poko.*
 import kpk.dev.model.repository.UserRepository
 import kpk.dev.model.resource.Resource
 import kpk.dev.model.utils.TestSchedulerProvider
-
+import org.junit.*
 import org.junit.runner.RunWith
+import org.mockito.ArgumentMatchers
 import org.mockito.Mock
 import org.mockito.Mockito
 import org.mockito.MockitoAnnotations
-import org.junit.*
-import org.mockito.ArgumentMatchers
 import org.mockito.junit.MockitoJUnitRunner
 
 @RunWith(MockitoJUnitRunner::class)
@@ -69,7 +68,7 @@ class UserSelectViewModelTest {
         userUseCase.getUserRepository = userRepo
         Mockito.`when`(userUseCase.checkUser(ArgumentMatchers.anyString(), ArgumentMatchers.anyString())).thenReturn(Single.just(response))
         viewModel.checkUser(ArgumentMatchers.anyString(), ArgumentMatchers.anyString()).observeForever(observer!!)
-        Mockito.verify(observer!!).onChanged(viewModel.resource)
+        Mockito.verify(observer!!).onChanged(Resource.Failure(Throwable("GraphQL error")))
     }
 
     @After
@@ -80,5 +79,5 @@ class UserSelectViewModelTest {
 
     private fun generateMockResponse() = BaseResponse(Data(User(Repositories(listOf(), PageInfo("", true)), "")), listOf<Error>())
 
-    private fun generateMockResponseFail() = BaseResponse(Data(User(Repositories(listOf(), PageInfo("", true)), "")), listOf(Error(listOf(), "An error occurred", listOf(), "error type")))
+    private fun generateMockResponseFail() = BaseResponse(Data(User(Repositories(listOf(), PageInfo("", true)), "")), listOf(Error(listOf(), "GraphQL error", listOf(), "error type")))
 }

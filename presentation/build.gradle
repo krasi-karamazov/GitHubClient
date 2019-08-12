@@ -11,6 +11,4 @@ dependencies{
     presentationTestDependencies.each{
         add(it.configuration, it.dependency)
     }
-
-    testImplementation  "android.arch.core:core-testing:1.1.1"
 }

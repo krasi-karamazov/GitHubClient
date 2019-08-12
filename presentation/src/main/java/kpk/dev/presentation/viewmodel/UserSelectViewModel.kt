@@ -11,7 +11,6 @@ import javax.inject.Inject
 
 class UserSelectViewModel @Inject constructor(val checkUserUseCase: CheckUserUseCase, override var compositeDisposable: CompositeDisposable, val schedulerProvider: SchedulerProvider): BaseViewModel(compositeDisposable) {
     //just for testing
-    val resource: Resource<BaseResponse> = Resource.Failure(Throwable("An error occurred"))
     private val checkUserLiveData = MutableLiveData<Resource<BaseResponse>>()
     fun checkUser(token: String, user: String): MutableLiveData<Resource<BaseResponse>> {
 
@@ -22,15 +21,15 @@ class UserSelectViewModel @Inject constructor(val checkUserUseCase: CheckUserUse
                 if(error == null) {
                     if(data != null) {
                         if(data.errors != null && data.errors!!.isNotEmpty()) {
-                            checkUserLiveData.value = resource
+                            checkUserLiveData.value = Resource.Failure(Throwable(data.errors?.get(0)?.message?.trim()))
                         }else{
                             checkUserLiveData.value = Resource.Success(data)
                         }
                     }else{
-                        checkUserLiveData.value = resource
+                        checkUserLiveData.value = Resource.Failure(Throwable("An error occurred"))
                     }
                 }else{
-                    checkUserLiveData.value = resource
+                    checkUserLiveData.value = Resource.Failure(Throwable("An error occurred"))
                 }
             })
 
