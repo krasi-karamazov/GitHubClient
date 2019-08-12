@@ -7,9 +7,8 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import kpk.dev.presentation.auth.viewmodel.AuthViewModel
 import kpk.dev.presentation.repositorydetails.viewmodel.RepositoryDetailsViewModel
-import kpk.dev.presentation.reposlist.view.ReposListActivity
 import kpk.dev.presentation.reposlist.viewmodel.ReposListViewModel
-import kpk.dev.presentation.userselect.viewmodel.UserSelectViewModel
+import kpk.dev.presentation.viewmodel.UserSelectViewModel
 import kpk.dev.presentation.viewmodelfactory.ViewModelFactory
 
 @Module

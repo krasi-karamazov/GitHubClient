@@ -15,7 +15,7 @@ import kpk.dev.presentation.R
 import kpk.dev.presentation.base.view.BaseActivity
 import kpk.dev.presentation.extensions.addTextWatcher
 import kpk.dev.presentation.reposlist.view.ReposListActivity
-import kpk.dev.presentation.userselect.viewmodel.UserSelectViewModel
+import kpk.dev.presentation.viewmodel.UserSelectViewModel
 import kpk.dev.presentation.viewmodelfactory.ViewModelFactory
 import javax.inject.Inject
 
