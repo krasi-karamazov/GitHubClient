@@ -69,7 +69,7 @@ class UserSelectViewModelTest {
         userUseCase.getUserRepository = userRepo
         Mockito.`when`(userUseCase.checkUser(ArgumentMatchers.anyString(), ArgumentMatchers.anyString())).thenReturn(Single.just(response))
         viewModel.checkUser(ArgumentMatchers.anyString(), ArgumentMatchers.anyString()).observeForever(observer!!)
-        Mockito.verify(observer!!).onChanged(Resource.Failure(Throwable("An error occurred")))
+        Mockito.verify(observer!!).onChanged(viewModel.resource)
     }
 
     @After
