@@ -8,7 +8,7 @@ The implemented requirements are listed below
 Below the Requirements are listed some TODOs that given time I would like to work on
 
 ### Requirements
-Build is an Android app written in Kotlin that will use GraphQL Github API to download list of repos for arbitrary user (can be hardcoded to github.com/toptal). The items on the list should display the title and URL of each repo.
+Build an Android app written in Kotlin that will use GraphQL Github API to download list of repos for arbitrary user (can be hardcoded to github.com/toptal). The items on the list should display the title and URL of each repo.
 Tapping an item on the list should display a details screen with the title of the corresponding item, number of open and closed issues and pull requests (with corresponding titles). This doesn’t need to look beautiful in terms of UI.
 At least some components should be unit tested.
 
