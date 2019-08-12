@@ -30,7 +30,7 @@ At least some components should be unit tested.
 
 ∙ Work a bit on readability on some portions of the code
 
-∙ Implement extensive unit testing. Right now, because of time constraints, the unit tests are somewhat naive and limited to just being a showcase of how I usually do them. They can be found in the presentation and domain modules
+∙ Implement extensive unit testing. Right now, because of time constraints, the unit tests are somewhat naive and limited to just being a showcase of how I usually do them. They can be found in the presentation and domain modules. This is a pretty simple app, so the testing for the different viewmodels and usecases (which are the most sensible components to test) is going to be very similar
 
 ∙ Work a bit on UI and UX as currently it's not optimal and pretty ugly
 
