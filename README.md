@@ -26,6 +26,8 @@ At least some components should be unit tested.
 
 #### TODO
 
+∙ Add network state check before every request (usually I would do this using an extension function for the Activity class and check before every request)
+
 ∙ Work a bit on readability on some portions of the code
 
 ∙ Implement extensive unit testing. Right now, because of time constraints, the unit tests are somewhat naive and limited to just being a showcase of how I usually do them. They can be found in the presentation and domain modules
