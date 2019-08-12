@@ -8,5 +8,7 @@ import javax.inject.Inject
 
 open class CheckUserUseCase @Inject constructor(var getUserRepository: UserRepository) {
 
-    fun checkUser(token: String, user: String): Single<BaseResponse> = getUserRepository.getUser(token, user)
+    fun checkUser(token: String, user: String): Single<BaseResponse> {
+        return getUserRepository.getUser(token, user)
+    }
 }
